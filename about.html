@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Lifewood - Global Data Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+
+  <header class="header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L23.5962 10.5V31.5L12 42L0.403847 31.5V10.5L12 0Z" fill="currentColor"/></svg>
+        <span class="logo-text">lifewood</span>
+      </a>
+      <ul id="desktop-nav" class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button id="mobile-menu-button" class="mobile-menu-toggle"><svg class="icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+    </nav>
+  </header>
+
+  <div id="mobile-menu" class="mobile-nav">
+      <div class="mobile-nav-header"><button id="close-menu-button" class="mobile-menu-toggle"><svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
+      <ul class="mobile-nav-links">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+  </div>
+
+  <main>
+    <section class="page-header-section">
+      <div class="container text-center">
+        <h1 class="page-title">Who We Are</h1>
+        <p class="page-subtitle">A global partner dedicated to delivering data excellence for AI development and historical preservation.</p>
+      </div>
+    </section>
+
+    <section class="content-section fade-in-section">
+      <div class="container content-container">
+        <div class="content-block">
+          <h2>Our Story</h2>
+          <p>Lifewood was established to address a critical need in the AI industry: access to reliable, high-quality data. We recognized that even the most advanced algorithms are only as effective as the data they are trained on. Our journey began with a commitment to building a global network of experts and a robust technological platform to collect, label, and organize data with unmatched precision and scale.</p>
+        </div>
+        <div class="content-block">
+          <h2>Our Approach</h2>
+          <p>We combine human expertise with advanced technology to deliver superior data solutions. Our proactive approach means we work as an extension of your team, adapting to your project's unique requirements and evolving with your needs. We believe in purposeful speed, ensuring timely delivery without ever compromising on the quality that defines our work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section fade-in-section section-bg">
+        <div class="container text-center">
+            <h2 class="section-title">Our History of Excellence</h2>
+            <p class="section-subtitle">Over two decades of innovation and trust.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2004</h3>
+                        <p>Lifewood is founded with a mission to digitize historical and genealogical records.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2009</h3>
+                        <p>Expanded operations globally, opening our first secure facility in the Philippines.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>2018</h3>
+                        <p>Achieved SOC 2 Type 2 certification, affirming our commitment to enterprise-level security.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Today</h3>
+                        <p>A trusted data partner for leading AI innovators and the world's largest genealogy platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section fade-in-section">
+        <div class="container feature-section">
+            <div class="feature-content">
+                <h2 class="section-title" style="text-align: left;">Global Operations, Uncompromising Security</h2>
+                <p class="section-subtitle" style="text-align: left; max-width: none;">Our operational footprint spans the globe, with state-of-the-art, secure facilities designed for the most demanding data projects. This allows us to offer 24/7 workflows and access to a diverse, multilingual workforce while maintaining the highest levels of data privacy and security.</p>
+                <p style="color: var(--brand-light-text-muted); line-height: 1.7;">Every Lifewood facility is SOC 2 certified and adheres to strict, internationally recognized security protocols. Whether we are handling sensitive corporate documents or irreplaceable historical archives, our commitment to protecting your data is absolute.</p>
+                <a href="contact.html" class="btn btn-secondary" style="margin-top: 1rem;">Contact Our Team</a>
+            </div>
+            <div class="feature-image">
+                <img src="img/map.png" alt="Map showing global network connections">
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <a href="index.html" class="logo footer-logo">
+            <svg class="logo-icon" width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L23.5962 10.5V31.5L12 42L0.403847 31.5V10.5L12 0Z" fill="currentColor"/></svg>
+            <span class="logo-text">lifewood</span>
+        </a>
+        <p class="footer-text">© 2025 Lifewood. All rights reserved.</p>
+      </div>
+      <div class="footer-social">
+            <a href="https://www.youtube.com/@LifewoodDataTechnology" target="_blank" class="social-link" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,12.84 21.94,13.5 21.88,14.08C21.79,14.85 21.69,15.5 21.56,15.97C21.31,16.9 20.73,17.69 19.96,17.96C19.43,18.11 18.22,18.26 16.38,18.34C14.54,18.42 12.97,18.44 12,18.44C11.03,18.44 9.46,18.42 7.62,18.34C5.78,18.26 4.57,18.11 4.04,17.96C3.27,17.69 2.69,16.9 2.44,15.97C2.31,15.5 2.21,14.85 2.16,14.08C2.06,13.5 2,12.84 2,12L2.06,11.16C2.06,10.56 2.09,9.87 2.16,9.07C2.22,8.27 2.31,7.64 2.44,7.17C2.69,6.24 3.27,5.45 4.04,5.18C4.57,5.03 5.78,4.88 7.62,4.8C9.46,4.72 11.03,4.7 12,4.7C12.97,4.7 14.54,4.72 16.38,4.8C18.22,4.88 19.43,5.03 19.96,5.18C20.73,5.45 21.31,6.24 21.56,7.17Z"/></svg></a>
+            <a href="https://www.facebook.com/LifewoodPH" target="_blank" class="social-link" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10.01 10.01 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg></a>
+            <a href="https://ph.linkedin.com/company/lifewood-data-technology-ltd" target="_blank" class="social-link" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 13,11.25V10.13H10.13V18.5H13V13.57C13,12.8 13.09,12.03 14.17,12.03C15.24,12.03 15.24,12.97 15.24,13.64V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 7.78,5.2 6.88,5.2A1.68,1.68 0 0,0 5.2,6.88C5.2,7.78 6,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/></svg></a>
+            <a href="https://www.lifewood.com/" target="_blank" class="social-link" aria-label="Website"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.9,15.6C16.5,14.9 16.2,14.2 15.9,13.5C16.3,12.8 16.6,12 16.9,11.3C16.8,10.6 16.8,9.9 16.8,9.2C17.1,8.5 17.5,7.8 17.9,7.1C17.2,7 16.5,6.9 15.8,6.9C15.1,7.2 14.4,7.6 13.8,8.1L12,7.2L10.2,8.1C9.6,7.6 8.9,7.2 8.2,6.9C7.5,6.9 6.8,7 6.1,7.1C6.5,7.8 6.9,8.5 7.2,9.2C7.2,9.9 7.2,10.6 7.1,11.3C7.4,12 7.7,12.8 8.1,13.5C7.8,14.2 7.5,14.9 7.1,15.6C7.8,15.8 8.5,15.9 9.2,15.9C9.9,15.6 10.6,15.2 11.2,14.7L12,15.2L12.8,14.7C13.4,15.2 14.1,15.6 14.8,15.9C15.5,15.9 16.2,15.8 16.9,15.6Z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
