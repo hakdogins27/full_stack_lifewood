@@ -8,11 +8,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* === DEFINITIVE FIX FOR BROWSER AUTOFILL STYLES === */
+/* Forcefully override browser autofill styles */
+/* Forcefully override browser autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    background-color: #0e1e15 !important; /* Correct background color */
+    color: #f3f4f6 !important; /* Text color */
+    box-shadow: 0 0 0 30px #0e1e15 inset !important; /* Matching the input background */
+    -webkit-box-shadow: 0 0 0 30px #0e1e15 inset !important; /* Safari specific */
+    -webkit-text-fill-color: #f3f4f6 !important; /* Text color inside autofill */
+    caret-color: #f3f4f6 !important; /* Optional: caret matches the text color */
+    transition: background-color 5000s ease-in-out 0s; /* Forces the background to stay */
+}
+
+/* Ensure normal input fields don’t change when autofill is applied */
+input {
+    background-color: #0e1e15 !important; /* Background color of input fields */
+    color: #f3f4f6 !important; /* Text color */
+}
+
+  </style>
 </head>
 <body>
   <canvas id="particle-canvas"></canvas>
 
   <header class="header">
+            <a href="admin_login.html" class="secret-admin-link"></a>
     <nav class="navbar container">
       <a href="index.html" class="logo">
         <svg class="logo-icon" width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L23.5962 10.5V31.5L12 42L0.403847 31.5V10.5L12 0Z" fill="currentColor"/></svg>
@@ -30,13 +55,13 @@
   </header>
 
   <div id="mobile-menu" class="mobile-nav">
-      <div class="mobile-nav-header"><button id="close-menu-button" class="mobile-menu-toggle"><svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
-      <ul class="mobile-nav-links">
-          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-          <li><a href="about.html" class="mobile-nav-link">About</a></li>
-          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-      </ul>
+    <div class="mobile-nav-header"><button id="close-menu-button" class="mobile-menu-toggle"><svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
   </div>
 
   <main>
@@ -56,92 +81,280 @@
           </div>
         </div>
         <div class="service-list-item">
-            <div class="service-content">
-                <h2>Data Labeling & Annotation</h2>
-                <p>Accuracy is paramount. We provide precise, human-powered labeling and annotation services for all data types. Our rigorous quality assurance processes ensure high-fidelity ground truth data, essential for training and validating world-class machine learning algorithms.</p>
-            </div>
+          <div class="service-content">
+            <h2>Data Labeling & Annotation</h2>
+            <p>Accuracy is paramount. We provide precise, human-powered labeling and annotation services for all data types. Our rigorous quality assurance processes ensure high-fidelity ground truth data, essential for training and validating world-class machine learning algorithms.</p>
+          </div>
         </div>
         <div class="service-list-item">
-            <div class="service-content">
-                <h2>Data Structuring & Cleansing</h2>
-                <p>Transforming unstructured information into actionable insights requires meticulous organization. We structure, clean, validate, and categorize your datasets, ensuring they are optimized for efficient processing and analysis within your AI pipelines.</p>
-            </div>
+          <div class="service-content">
+            <h2>Data Structuring & Cleansing</h2>
+            <p>Transforming unstructured information into actionable insights requires meticulous organization. We structure, clean, validate, and categorize your datasets, ensuring they are optimized for efficient processing and analysis within your AI pipelines.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="content-section fade-in-section section-bg">
-        <div class="container text-center">
-            <h2 class="section-title">Specialized Data Solutions</h2>
-            <p class="section-subtitle">We apply our core expertise to solve complex, large-scale data challenges for specific industries.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="img/Machine_Learning.png" alt="Abstract AI and Machine Learning visual" class="service-card-image">
-                    <div class="service-card-content">
-                        <h3>AI & Machine Learning</h3>
-                        <p>We provide comprehensive data solutions for acquiring, processing, and managing diverse datasets to fuel the training and evolution of artificial intelligence.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="img/Genealogy.png" alt="Genealogical chart and historical documents" class="service-card-image">
-                    <div class="service-card-content">
-                        <h3>Genealogy</h3>
-                        <p>We are the premier data partner for the world’s leading genealogy and family history organizations, processing and structuring vast archives of historical records.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="img/BPO.png" alt="Business process outsourcing workflow diagram" class="service-card-image">
-                    <div class="service-card-content">
-                        <h3>Business Process Outsourcing</h3>
-                        <p>Our BPO services help organizations streamline operations, reduce costs, and improve efficiency by managing complex, data-intensive processes.</p>
-                    </div>
-                </div>
+      <div class="container text-center">
+        <h2 class="section-title">Specialized Data Solutions</h2>
+        <p class="section-subtitle">We apply our core expertise to solve complex, large-scale data challenges for specific industries.</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="img/Machine_Learning.png" alt="Abstract AI and Machine Learning visual" class="service-card-image">
+            <div class="service-card-content">
+              <h3>AI & Machine Learning</h3>
+              <p>We provide comprehensive data solutions for acquiring, processing, and managing diverse datasets to fuel the training and evolution of artificial intelligence.</p>
             </div>
+          </div>
+          <div class="service-card">
+            <img src="img/Genealogy.png" alt="Genealogical chart and historical documents" class="service-card-image">
+            <div class="service-card-content">
+              <h3>Genealogy</h3>
+              <p>We are the premier data partner for the world’s leading genealogy and family history organizations, processing and structuring vast archives of historical records.</p>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="img/BPO.png" alt="Business process outsourcing workflow diagram" class="service-card-image">
+            <div class="service-card-content">
+              <h3>Business Process Outsourcing</h3>
+              <p>Our BPO services help organizations streamline operations, reduce costs, and improve efficiency by managing complex, data-intensive processes.</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="content-section fade-in-section">
-        <div class="container text-center">
-            <h2 class="section-title">Why Choose Lifewood?</h2>
-            <p class="section-subtitle">Our commitment to quality, security, and scale makes us the trusted partner for data-critical projects.</p>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-                    <h3>Enterprise-Grade Security</h3>
-                    <p>With SOC 2 Type 2 certified facilities and processes, we guarantee the highest level of security and confidentiality for your sensitive data.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
-                    <h3>Unmatched Accuracy</h3>
-                    <p>Our human-in-the-loop quality assurance and proprietary methodologies allow us to deliver data with a guaranteed accuracy rate of up to 99.995%.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></div>
-                    <h3>Global Scale & Speed</h3>
-                    <p>Our global operational footprint enables 24/7 workflows, rapid project ramp-up, and access to a diverse, multilingual workforce to meet any project scale.</p>
-                </div>
-            </div>
+      <div class="container text-center">
+        <h2 class="section-title">Why Choose Lifewood?</h2>
+        <p class="section-subtitle">Our commitment to quality, security, and scale makes us the trusted partner for data-critical projects.</p>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+            <h3>Enterprise-Grade Security</h3>
+            <p>With SOC 2 Type 2 certified facilities and processes, we guarantee the highest level of security and confidentiality for your sensitive data.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <h3>Unmatched Accuracy</h3>
+            <p>Our human-in-the-loop quality assurance and proprietary methodologies allow us to deliver data with a guaranteed accuracy rate of up to 99.995%.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></div>
+            <h3>Global Scale & Speed</h3>
+            <p>Our global operational footprint enables 24/7 workflows, rapid project ramp-up, and access to a diverse, multilingual workforce to meet any project scale.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="content-section fade-in-section">
+      <div class="container text-center">
+        <h2 class="section-title">Interested in Joining Our Team?</h2>
+        <p class="section-subtitle">We are always looking for talented individuals to help us process the world's data. If you have a passion for accuracy and a desire to work on large-scale projects, we'd love to hear from you.</p>
+        <a href="#" id="open-apply-modal-btn" class="btn btn-primary" style="margin-top: 2rem;">Apply Now</a>
+      </div>
     </section>
   </main>
+  
+  <div id="application-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Application Form</h2>
+        <button id="close-modal-btn" class="close-button">×</button>
+      </div>
+      <p class="modal-subtitle">We're excited to learn more about you. Please fill out the details below.</p>
+      
+      <form id="application-form" class="modal-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="18" placeholder="e.g., 25" required>
+          </div>
+          <div class="form-group">
+            <label for="degree">Degree</label>
+            <input type="text" id="degree" name="degree" placeholder="e.g., B.S. in Computer Science" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="position">Position Applied For</label>
+          <select id="position" name="position" required>
+            <!-- Populated by script -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Relevant Job Experience</label>
+          <textarea id="experience" name="experience" rows="4" placeholder="Briefly describe your relevant skills and past projects..."></textarea>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="resumeLink">Resume/Portfolio Link</label>
+            <input type="url" id="resumeLink" name="resumeLink" placeholder="e.g., your LinkedIn profile">
+          </div>
+          <div class="form-group">
+            <label for="resumeFile">Upload Resume</label>
+            <div id="file-upload-wrapper" class="file-upload-wrapper">
+              <input type="file" id="resumeFile" name="resumeFile" class="file-upload-input" accept=".pdf,.doc,.docx">
+              <label for="resumeFile" class="file-upload-label">Choose File</label>
+              <span id="file-name-display" class="file-name-display">No file chosen</span>
+              <button type="button" id="remove-file-btn" class="remove-file-btn" aria-label="Remove file">×</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="startTime">Available Start Time</label>
+            <input type="time" id="startTime" name="startTime">
+          </div>
+          <div class="form-group">
+            <label for="endTime">Available End Time</label>
+            <input type="time" id="endTime" name="endTime">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-application-btn">Submit Application</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-info">
         <a href="index.html" class="logo footer-logo">
-            <svg class="logo-icon" width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L23.5962 10.5V31.5L12 42L0.403847 31.5V10.5L12 0Z" fill="currentColor"/></svg>
-            <span class="logo-text">lifewood</span>
+          <svg class="logo-icon" width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L23.5962 10.5V31.5L12 42L0.403847 31.5V10.5L12 0Z" fill="currentColor"/></svg>
+          <span class="logo-text">lifewood</span>
         </a>
         <p class="footer-text">© 2025 Lifewood. All rights reserved.</p>
       </div>
       <div class="footer-social">
-            <a href="https://www.youtube.com/@LifewoodDataTechnology" target="_blank" class="social-link" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,12.84 21.94,13.5 21.88,14.08C21.79,14.85 21.69,15.5 21.56,15.97C21.31,16.9 20.73,17.69 19.96,17.96C19.43,18.11 18.22,18.26 16.38,18.34C14.54,18.42 12.97,18.44 12,18.44C11.03,18.44 9.46,18.42 7.62,18.34C5.78,18.26 4.57,18.11 4.04,17.96C3.27,17.69 2.69,16.9 2.44,15.97C2.31,15.5 2.21,14.85 2.16,14.08C2.06,13.5 2,12.84 2,12L2.06,11.16C2.06,10.56 2.09,9.87 2.16,9.07C2.22,8.27 2.31,7.64 2.44,7.17C2.69,6.24 3.27,5.45 4.04,5.18C4.57,5.03 5.78,4.88 7.62,4.8C9.46,4.72 11.03,4.7 12,4.7C12.97,4.7 14.54,4.72 16.38,4.8C18.22,4.88 19.43,5.03 19.96,5.18C20.73,5.45 21.31,6.24 21.56,7.17Z"/></svg></a>
-            <a href="https://www.facebook.com/LifewoodPH" target="_blank" class="social-link" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10.01 10.01 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg></a>
-            <a href="https://ph.linkedin.com/company/lifewood-data-technology-ltd" target="_blank" class="social-link" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 13,11.25V10.13H10.13V18.5H13V13.57C13,12.8 13.09,12.03 14.17,12.03C15.24,12.03 15.24,12.97 15.24,13.64V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 7.78,5.2 6.88,5.2A1.68,1.68 0 0,0 5.2,6.88C5.2,7.78 6,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/></svg></a>
-            <a href="https://www.lifewood.com/" target="_blank" class="social-link" aria-label="Website"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.9,15.6C16.5,14.9 16.2,14.2 15.9,13.5C16.3,12.8 16.6,12 16.9,11.3C16.8,10.6 16.8,9.9 16.8,9.2C17.1,8.5 17.5,7.8 17.9,7.1C17.2,7 16.5,6.9 15.8,6.9C15.1,7.2 14.4,7.6 13.8,8.1L12,7.2L10.2,8.1C9.6,7.6 8.9,7.2 8.2,6.9C7.5,6.9 6.8,7 6.1,7.1C6.5,7.8 6.9,8.5 7.2,9.2C7.2,9.9 7.2,10.6 7.1,11.3C7.4,12 7.7,12.8 8.1,13.5C7.8,14.2 7.5,14.9 7.1,15.6C7.8,15.8 8.5,15.9 9.2,15.9C9.9,15.6 10.6,15.2 11.2,14.7L12,15.2L12.8,14.7C13.4,15.2 14.1,15.6 14.8,15.9C15.5,15.9 16.2,15.8 16.9,15.6Z"/></svg></a>
+        <a href="https://www.youtube.com/@LifewoodDataTechnology" target="_blank" class="social-link" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,12.84 21.94,13.5 21.88,14.08C21.79,14.85 21.69,15.5 21.56,15.97C21.31,16.9 20.73,17.69 19.96,17.96C19.43,18.11 18.22,18.26 16.38,18.34C14.54,18.42 12.97,18.44 12,18.44C11.03,18.44 9.46,18.42 7.62,18.34C5.78,18.26 4.57,18.11 4.04,17.96C3.27,17.69 2.69,16.9 2.44,15.97C2.31,15.5 2.21,14.85 2.16,14.08C2.06,13.5 2,12.84 2,12L2.06,11.16C2.06,10.56 2.09,9.87 2.16,9.07C2.22,8.27 2.31,7.64 2.44,7.17C2.69,6.24 3.27,5.45 4.04,5.18C4.57,5.03 5.78,4.88 7.62,4.8C9.46,4.72 11.03,4.7 12,4.7C12.97,4.7 14.54,4.72 16.38,4.8C18.22,4.88 19.43,5.03 19.96,5.18C20.73,5.45 21.31,6.24 21.56,7.17Z"/></svg></a>
+        <a href="https://www.facebook.com/LifewoodPH" target="_blank" class="social-link" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10.01 10.01 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg></a>
+        <a href="https://ph.linkedin.com/company/lifewood-data-technology-ltd" target="_blank" class="social-link" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 13,11.25V10.13H10.13V18.5H13V13.57C13,12.8 13.09,12.03 14.17,12.03C15.24,12.03 15.24,12.97 15.24,13.64V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 7.78,5.2 6.88,5.2A1.68,1.68 0 0,0 5.2,6.88C5.2,7.78 6,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z"/></svg></a>
+        <a href="https://www.lifewood.com/" target="_blank" class="social-link" aria-label="Website"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.9,15.6C16.5,14.9 16.2,14.2 15.9,13.5C16.3,12.8 16.6,12 16.9,11.3C16.8,10.6 16.8,9.9 16.8,9.2C17.1,8.5 17.5,7.8 17.9,7.1C17.2,7 16.5,6.9 15.8,6.9C15.1,7.2 14.4,7.6 13.8,8.1L12,7.2L10.2,8.1C9.6,7.6 8.9,7.2 8.2,6.9C7.5,6.9 6.8,7 6.1,7.1C6.5,7.8 6.9,8.5 7.2,9.2C7.2,9.9 7.2,10.6 7.1,11.3C7.4,12 7.7,12.8 8.1,13.5C7.8,14.2 7.5,14.9 7.1,15.6C7.8,15.8 8.5,15.9 9.2,15.9C9.9,15.6 10.6,15.2 11.2,14.7L12,15.2L12.8,14.7C13.4,15.2 14.1,15.6 14.8,15.9C15.5,15.9 16.2,15.8 16.9,15.6Z"/></svg></a>
       </div>
     </div>
   </footer>
+  
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const applicationForm = document.getElementById('application-form');
+      const submitButton = document.getElementById('submit-application-btn');
+      
+      const positionSelect = document.getElementById('position');
+
+      async function populatePositions() {
+          positionSelect.innerHTML = '<option value="" disabled selected>Loading Positions...</option>';
+          try {
+              const response = await fetch('http://127.0.0.1:5000/api/positions');
+              if (!response.ok) throw new Error('Network response was not ok');
+              const positions = await response.json();
+              positionSelect.innerHTML = ''; 
+              const defaultOption = document.createElement('option');
+              defaultOption.value = '';
+              defaultOption.textContent = 'Select a position...';
+              defaultOption.disabled = true;
+              defaultOption.selected = true;
+              positionSelect.appendChild(defaultOption);
+              positions.forEach(position => {
+                  const option = document.createElement('option');
+                  option.value = position.title;
+                  option.textContent = position.title;
+                  positionSelect.appendChild(option);
+              });
+          } catch (error) {
+              console.error('Failed to fetch positions:', error);
+              positionSelect.innerHTML = '<option value="" disabled selected>Could not load positions</option>';
+          }
+      }
+      
+      const openModalBtn = document.getElementById('open-apply-modal-btn');
+      if (openModalBtn) {
+          openModalBtn.addEventListener('click', (e) => {
+              e.preventDefault();
+              populatePositions();
+          });
+      }
+
+      if (applicationForm) {
+        applicationForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          submitButton.disabled = true;
+          submitButton.textContent = 'Submitting...';
+          
+          const formData = new FormData(applicationForm);
+
+          try {
+            const response = await fetch('http://127.0.0.1:5000/api/apply', {
+              method: 'POST',
+              body: formData,
+            });
+            const result = await response.json();
+            if (response.ok) {
+              alert('Application submitted successfully!');
+              applicationForm.reset();
+              document.getElementById('file-name-display').textContent = 'No file chosen';
+              if(document.getElementById('remove-file-btn')) {
+                document.getElementById('remove-file-btn').style.display = 'none';
+              }
+              document.getElementById('close-modal-btn').click();
+            } else {
+              alert(`Error: ${result.message}`);
+            }
+          } catch (error) {
+            console.error('Network or Server Error:', error);
+            alert('Could not connect to the server. Please make sure the backend is running and try again.');
+          } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Application';
+          }
+        });
+      }
+      const fileInput = document.getElementById('resumeFile');
+      const fileNameDisplay = document.getElementById('file-name-display');
+      const removeFileBtn = document.getElementById('remove-file-btn');
+      if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener('change', () => {
+          if (fileInput.files.length > 0) {
+            fileNameDisplay.textContent = fileInput.files[0].name;
+            removeFileBtn.style.display = 'inline-block';
+          } else {
+            fileNameDisplay.textContent = 'No file chosen';
+            removeFileBtn.style.display = 'none';
+          }
+        });
+      }
+      if(removeFileBtn) {
+        removeFileBtn.addEventListener('click', () => {
+          fileInput.value = '';
+          fileNameDisplay.textContent = 'No file chosen';
+          removeFileBtn.style.display = 'none';
+        });
+      }
+    });
+  </script>
 </body>
 </html>

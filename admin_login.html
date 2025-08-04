@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Lifewood</title>
+    <!-- Assuming your styles are in style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- THIS IS THE ELEMENT THAT CREATES THE BACKGROUND -->
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="login-container">
+        <div class="login-card">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" width="24" height="42" viewBox="0 0 24 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L23.5962 10.5V31.5L12 42L0.403847 31.5V10.5L12 0Z" fill="currentColor"/></svg>
+                <span class="logo-text">lifewood</span>
+            </a>
+            
+            <h2 class="login-title">Admin Portal</h2>
+
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- This div will show feedback like "Login successful!" or "Invalid email" -->
+                <div id="login-feedback" class="form-feedback"></div>
+
+                <div class="form-submit">
+                    <button type="submit" id="login-btn" class="btn btn-primary">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- THIS SCRIPT RUNS THE ANIMATION. MAKE SURE 'script.js' EXISTS -->
+    <script src="script.js"></script>
+    
+    <!-- ========================================================= -->
+    <!-- == REVISED SCRIPT FOR SECURE FIREBASE AUTHENTICATION == -->
+    <!-- ========================================================= -->
+
+    <!-- Import the necessary Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    
+    <script>
+        // This code block runs AFTER your main script.js
+        // Initialize Firebase with your project's configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAXzjkyXV2FMI2d_M9YTiZQdG0WNG1WbDs",
+            authDomain: "lifewood-applicants-aa9bc.firebaseapp.com",
+            projectId: "lifewood-applicants-aa9bc",
+            storageBucket: "lifewood-applicants-aa9bc.firebasestorage.app",
+            messagingSenderId: "772352846931",
+            appId: "1:772352846931:web:2e824791e47c27a1f12aa6"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Get references to the form elements
+        const loginForm = document.getElementById('admin-login-form');
+        const feedbackDiv = document.getElementById('login-feedback');
+        const loginButton = document.getElementById('login-btn');
+
+        if (loginForm) {
+            loginForm.addEventListener('submit', async (e) => {
+                // Prevent the form from doing a default page reload
+                e.preventDefault();
+                
+                // Helper to show messages to the user
+                const feedback = (message, isError = false) => {
+                    feedbackDiv.textContent = message;
+                    feedbackDiv.className = 'form-feedback';
+                    if (message) {
+                        feedbackDiv.classList.add(isError ? 'error' : 'success');
+                    }
+                };
+                
+                feedback(''); // Clear previous messages
+                loginButton.disabled = true;
+                loginButton.textContent = 'Signing In...';
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                try {
+                    // 1. Use the Firebase SDK to sign in with email and password.
+                    //    This happens entirely in the browser.
+                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                    
+                    // 2. If successful, get the user's secure ID Token.
+                    const idToken = await userCredential.user.getIdToken();
+
+                    // 3. Save this token in the browser's session storage.
+                    //    The dashboard page will read this token to authenticate its API calls.
+                    sessionStorage.setItem('adminToken', idToken);
+                    
+                    feedback('Login successful! Redirecting...');
+                    
+                    // 4. Redirect to the dashboard page.
+                    window.location.href = 'admin_dashboard.html';
+
+                } catch (error) {
+                    // This block runs if Firebase returns an error (e.g., wrong password).
+                    console.error('Firebase Login Error:', error.message);
+                    feedback('Invalid email or password.', true);
+                    loginButton.disabled = false;
+                    loginButton.textContent = 'Sign In';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
