@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Secret files - NEVER commit these to GitHub
+firebase-credentials.json
+config.py
+.env
+
+# macOS system files
+.DS_Store
+._*
