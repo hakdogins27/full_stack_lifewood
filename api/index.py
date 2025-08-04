@@ -220,4 +220,8 @@ def delete_inquiry(inquiry_id):
     except Exception as e:
         return jsonify({"message": f"Server error: {e}"}), 500
 
+# --- Vercel WSGI Entry Point ---
+def handler(environ, start_response):
+    return app.wsgi_app(environ, start_response)
+
 # (Add your other admin routes like positions, analytics, etc. here)
